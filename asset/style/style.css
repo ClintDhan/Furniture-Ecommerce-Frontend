@@ -3,3 +3,105 @@
     margin: 0;
     padding: 0;
 }
+
+
+:root {
+    --header-nav-size: 16px;
+    --span-color: #0258D4;
+
+
+    --title-size: 56px;
+    --text-color: #141A3D;
+    --btn-bgc: #002458;
+    --text-bold: 700;
+    --text-medium: 500;
+}
+
+/* index */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1250px;
+    position: fixed;
+    top: 20px;
+    z-index: 1;
+}
+
+header a , nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: var(--text-bold);
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:
+    linear-gradient(
+    rgba(0, 40, 255, 0.21),
+    rgba(0, 15, 150, 0.11)
+),
+    url('../img/featured/pexels-chairs-2181994_1920.jpg');
+    background-repeat: no-repeat;
+
+   background-position: center 80%;
+    width: 100%;
+    object-position: 100px;
+}
+
+.hero-text-container {
+    text-align: center;
+    width: 688px;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(5.8px);
+border: 1px solid rgba(255, 255, 255, 0.47);
+padding: 30px;
+}
+
+.hero-title {
+    color: white;
+    font-size: var(--title-size);
+    font-weight: var(--text-bold);
+}
+
+.hero-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: #141A3D;
+}
+
+.hero-span {
+    color: var(--span-color);
+}
+
+.cart {
+    font-size: 25px;
+} 
+
+.hero-cta-btn {
+    background-color: var(--btn-bgc);
+    color: white;
+    padding: 17px;
+    border: 1px solid #B2B2B2;
+    font-size: 16px;
+}
+
