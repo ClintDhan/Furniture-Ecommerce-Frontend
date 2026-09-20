@@ -190,11 +190,12 @@ padding: 30px;
 
 
 .slider-title {
-    font-size: var(--title-size);
+    font-size: 40px;
     font-weight: var(--text-bold);
     color: var(--text-color);
 }
 .slider-container {
+    margin-top: 20px;
     width: 1250px;
      overflow: hidden;
      height: 40vh;
@@ -208,7 +209,7 @@ padding: 30px;
 
 .slider > img {
     height: 100px;
-}
+} 
 
 @keyframes slide {
     from {
@@ -218,4 +219,29 @@ padding: 30px;
     to {
         transform: translateX(-50%);
     }
+}
+
+footer {
+    height: 95px;
+    background-color: #3D8BFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-flx {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.footer-icon-flex a {
+    text-decoration: none;
+}
+
+.footer-icon-flex a i {
+    color: white;
+    font-size: 30px;
 }
