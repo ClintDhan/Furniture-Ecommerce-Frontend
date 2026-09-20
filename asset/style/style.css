@@ -182,3 +182,40 @@ padding: 30px;
     padding: 10px 40px;
     text-decoration: none;
 }
+
+.latest-card-flex > div img {
+    width: 409px;
+    height: 407px;
+}
+
+
+.slider-title {
+    font-size: var(--title-size);
+    font-weight: var(--text-bold);
+    color: var(--text-color);
+}
+.slider-container {
+    width: 1250px;
+     overflow: hidden;
+     height: 40vh;
+}
+
+.slider {
+    display: flex;
+    gap: 10px;
+    animation: slide 12s linear infinite reverse;
+}
+
+.slider > img {
+    height: 100px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
