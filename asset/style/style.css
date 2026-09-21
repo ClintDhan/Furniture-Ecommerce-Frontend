@@ -74,13 +74,13 @@ nav {
     text-align: center;
     width: 688px;
     /* From https://css.glass */
-background: rgba(255, 255, 255, 0.07);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(3px);
--webkit-backdrop-filter: blur(5.8px);
-border: 1px solid rgba(255, 255, 255, 0.47);
-padding: 30px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(255, 255, 255, 0.47);
+    padding: 30px;
 }
 
 .hero-title {
@@ -271,6 +271,7 @@ footer {
     justify-content: space-between;
     margin-top: 70px;
     gap: 70px;
+    margin-bottom: 20px;
 }
 
 .filter-container {
@@ -332,4 +333,30 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.products-section {
+    width: 100%;
+}
+
+.product-add-cart-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #bebebe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.load-more-btn {
+    width: 290px;
+    background-color: #002458;
+    border: none;
+    color: #C3BFBF;
+    font-weight: var(--text-bold);
+    font-size: 15px;
+    height: 45px;
+    cursor: pointer;
 }
