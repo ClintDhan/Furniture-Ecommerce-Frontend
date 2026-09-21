@@ -274,3 +274,7 @@ const products = [
         price: 8900
     }
 ]
+
+export function productsList() {
+    return products;
+}
