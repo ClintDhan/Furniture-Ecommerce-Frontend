@@ -278,3 +278,4 @@ const products = [
 export function productsList() {
     return products;
 }
+

@@ -101,7 +101,21 @@ nav {
 
 .cart {
     font-size: 25px;
+    position: relative;
 } 
+
+.cart-count-container {
+    position: absolute;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgb(230, 55, 55);
+    color: yellow;
+}
 
 .hero-cta-btn {
     background-color: var(--btn-bgc);

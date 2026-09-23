@@ -1,18 +1,19 @@
 import { productsList } from "./products.js";
+import { showCart } from './productsCart.js';
 
 let startIndex = 0;
 let initialIndex = 10;
 
-
+let cart = showCart();
 let shopProductsContainer = document.querySelector(".shop-products-container");
 let products = productsList();
 let filteredProducts = products;
-let initialProducts = products.slice(startIndex, initialIndex);
+let initialProducts = filteredProducts.slice(startIndex, initialIndex);
 let loadMoreBtn = document.querySelector(".load-more-btn");
 
 const categoryRadios = document.querySelectorAll('input[name="category"]');
 
-shopProductsContainer.innerHTML += initialProducts.map(({id , name, src, price}) => {
+shopProductsContainer.innerHTML += filteredProducts.map(({id , name, src, price}) => {
     return `<div id="product-id-${id}" class="shop-products-card">
         <div>
             <img src="${src}" alt="" class="shop-products-img">
@@ -129,3 +130,33 @@ function checkLastProduct() {
 
 
 
+shopProductsContainer.addEventListener("click", (event) => {
+    if (event.target.closest(".product-add-cart-container")) {
+        const button = event.target.closest(".product-add-cart-container");
+
+        const productCard = button.parentElement.parentElement;
+        const id = Number(productCard.id.slice(11));
+        
+        
+        const existingItem = cart.find(item => item.id === id);
+
+        if (existingItem) {
+            existingItem.quantity++;
+            existingItem.total = existingItem.quantity * existingItem.unitPrice;
+        }
+        else {
+            const cartProduct = products.find(product => product.id === id);
+
+            const item = {
+                id: id,
+                quantity: 1,
+                unitPrice: cartProduct.price,
+                total: cartProduct.price
+            }
+            cart.push(item);
+
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+});
