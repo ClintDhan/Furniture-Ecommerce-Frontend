@@ -1,5 +1,6 @@
 import { productsList } from "./products.js";
 import { showCart } from './productsCart.js';
+import { getCartCount} from './cartCount.js';
 
 let startIndex = 0;
 let initialIndex = 10;
@@ -13,7 +14,7 @@ let loadMoreBtn = document.querySelector(".load-more-btn");
 
 const categoryRadios = document.querySelectorAll('input[name="category"]');
 
-shopProductsContainer.innerHTML += filteredProducts.map(({id , name, src, price}) => {
+shopProductsContainer.innerHTML += initialProducts.map(({id , name, src, price}) => {
     return `<div id="product-id-${id}" class="shop-products-card">
         <div>
             <img src="${src}" alt="" class="shop-products-img">
@@ -158,5 +159,6 @@ shopProductsContainer.addEventListener("click", (event) => {
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
+        getCartCount();
     }
 });
