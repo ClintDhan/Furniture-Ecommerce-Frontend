@@ -22,13 +22,14 @@
         <a href="">CLNTY</a>
 
         <nav>
-            <a href="">HOME</a>
-            <a href="">SHOP</a>
-            <a href="">ABOUT</a>
-            <a href="">CONTACT</a>
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
         </nav>
 
-        <i class="bi bi-cart3"></i>
+        <i class="bi bi-cart3 cart"></i>
+        <div class="cart-count-container"><p class="cart-count"></p></div>
     </header>
 
     <div class="page-title-container">
@@ -36,61 +37,71 @@
     </div>
 
     <div class="about-hero-section">
-        <div class="about-hero-left">
-            <p class="about-hero-left-title">Furniture Made for the Way You Live</p>
-            <p class="about-hero-left-sub">We believe great furniture should be more than beautiful—it should make your space feel like home.</p>
-        </div>
+        <div class="about-hero-section-container">
+            <div class="about-hero-left">
+                <p class="about-hero-left-title">Furniture Made for the Way You Live</p>
+                <p class="about-hero-left-sub">We believe great furniture should be more than beautiful—it should make your space feel like home.</p>
+            </div>
 
-        <img src="" alt="">
+            <img src="asset/img/products/Konobi-Family-Sala-Set.jpg" alt="">
+        </div>
     </div>
 
     <div class="about-our-story-section">
-        <p>OUR STORY</p>
-        <p>Designed with Comfort in Mind</p>
-        <p>We created our brand with a simple idea: finding beautiful, comfortable, and quality furniture should be effortless. From timeless chairs to modern sofas, every piece is selected to bring style and functionality into your everyday space.</p>
-        <img src="" alt="">
+        <div class="about-our-story-section-container">
+            <p class="our-story">OUR STORY</p>
+            <p class="our-story-title">Designed with Comfort in Mind</p>
+            <p class="our-story-sub">We created our brand with a simple idea: finding beautiful, comfortable, and quality furniture should be effortless. From timeless chairs to modern sofas, every piece is selected to bring style and functionality into your everyday space.</p>
+            <img src="asset/img/products/Cliffany-Aero-Sala-Set.jpg" alt="">
+        </div>
     </div>
 
     <div class="about-values-section">
-        <p>OUR VALUES</p>
+        <div class="about-values-container">
+            <p class="our-values">OUR VALUES</p>
 
-        <div class="values-grid">
-            <div class="">
-                <p>Quality First</p>
-                <p>Furniture built with materials and craftsmanship you can rely on.</p>
-            </div>
-            <div class="">
-                <p>Comfort Matters</p>
-                <p>Designed not just to look good, but to feel good.</p>
-            </div>
-            <div class="">
-                <p>Modern Design</p>
-                <p>Clean, timeless pieces that complement different interiors.</p>
-            </div>
-            <div class="">
-                <p>Made for You</p>
-                <p>Pieces that help turn your house into a space that feels truly yours.</p>
-            </div>
+            <div class="values-grid">
+                <div class="values-1 values-container">
+                    <p>Quality First</p>
+                    <p>Furniture built with materials and craftsmanship you can rely on.</p>
+                </div>
+                <div class="values-2 values-container">
+                    <p>Comfort Matters</p>
+                    <p>Designed not just to look good, but to feel good.</p>
+                </div>
+                <div class="values-3 values-container">
+                    <p>Modern Design</p>
+                    <p>Clean, timeless pieces that complement different interiors.</p>
+                </div>
+                <div class="values-4 values-container">
+                    <p>Made for You</p>
+                    <p>Pieces that help turn your house into a space that feels truly yours.</p>
+                </div>
 
+            </div>
+        
         </div>
     </div>
 
     <div class="closing-cta-section"> 
-        <p class="closing-title">Make Your Space Yours</p>
+        <p class="closing-title">Make Your Space <span class="hero-span">Yours</span></p>
         <p class="closing-sub">Discover furniture designed to bring comfort, character, and style into your home.</p>
-        <button class="closing-cta-btn">EXPLORE COLLECTION</button>
+        <a href="shop.html" class="closing-cta-btn">EXPLORE COLLECTION</a>
     </div>
 
     <footer>
-        <p>©2025 CLINT DHANIELLE S. ROÑO</p>
+        <div class="footer-flx">
+            <p>©2025 CLINT DHANIELLE S. ROÑO</p>
         <div class="footer-icon-flex">
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-github"></i>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-github"></i></a>
+        </div>
         </div>
     </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script type="module" src="js/app.js"></script>
+<script type="module" src="js/cartCount.js"></script>
 </body>
 </html>

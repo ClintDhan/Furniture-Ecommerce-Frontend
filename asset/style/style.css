@@ -382,3 +382,183 @@ footer {
     height: 45px;
     cursor: pointer;
 }
+
+/* about section */
+
+
+.about-hero-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-hero-section-container {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-hero-section-container img {
+    width: 480px;
+    height: 395px;
+}
+
+.about-hero-left {
+    height: 395px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+}
+
+.about-hero-left-title {
+    font-size: 56px;
+    color: var(--text-color);
+    font-weight: var(--text-bold);
+}
+
+
+.about-hero-left-sub {
+    color: var(--text-gray);
+    font-size: 18px;
+}  
+
+.about-our-story-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.about-our-story-section-container {
+    width: 1250px;
+    text-align: center;
+}
+
+.about-our-story-section-container img {
+    height: 110px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.our-story {
+    font-size: 56px;
+    color: var(--text-color);
+    font-weight: var(--text-bold);
+}
+
+.our-story-title {
+    font-size: 30px;
+    color: var(--text-color);
+    font-weight: var(--text-semi);
+}
+
+.our-story-sub {
+    font-size: 18px;
+}
+
+
+.about-values-section {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.about-values-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1250px;
+}
+
+.our-values {
+    color: var(--text-color);
+    font-weight: var(--text-bold);
+    font-size: 56px;
+}
+
+.values-grid {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 270px 270px;
+    margin-top: 15px;
+}
+
+.values-grid > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.values-1 {
+    color: var(--text-color);
+    background-color: #EEE7E7;
+}
+.values-2 {
+    color: var(--text-color);
+    background-color: #EEEDE7;
+}
+.values-3 {
+    color: var(--text-color);
+    background-color: #E7EEEE;
+}
+.values-4 {
+    color: var(--text-color);
+    background-color: #EDE7EE;
+}
+
+.value-container > p {
+    font-size: 20px;
+}
+.values-container > p:first-child {
+    font-family: var(--text-medium);
+    font-size: 22px;
+}
+
+.closing-cta-section {
+    margin-top: 50px;
+    background: url(../img/products/Erobu.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.closing-title {
+    font-size: 56px;
+    font-weight: var(--text-bold);
+    color: var(--text-color);
+}
+
+.closing-sub {
+    font-size: 20px;
+    text-transform: lowercase;
+}
+
+.closing-cta-btn {
+    border: 1px solid #B2B2B2;
+    background-color: #002458;
+    color: #D7D7D7;
+    text-transform: uppercase;
+    margin-top: 10px;
+    width: 197px;
+    height: 55px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
