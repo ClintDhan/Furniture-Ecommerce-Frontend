@@ -151,6 +151,7 @@ shopProductsContainer.addEventListener("click", (event) => {
             const item = {
                 id: id,
                 quantity: 1,
+                src: cartProduct.src,
                 unitPrice: cartProduct.price,
                 total: cartProduct.price
             }

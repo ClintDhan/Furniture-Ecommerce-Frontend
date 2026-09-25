@@ -102,6 +102,7 @@ nav {
 .cart {
     font-size: 25px;
     position: relative;
+    cursor: pointer;
 } 
 
 .cart-count-container {
@@ -666,4 +667,28 @@ footer {
 .contact-information-card p {
     font-size: 20px;
     text-align: center;
+}
+
+/* cart container */
+
+.view-cart-container {
+    position: fixed;
+    min-height: 10vh;
+    width: 250px;
+    border: 1px solid lightgray;
+    right: 140px;
+    top: 50px;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.show-container {
+    display: flex;
+}
+
+.cart-no-products {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: var(--text-bold);
 }
