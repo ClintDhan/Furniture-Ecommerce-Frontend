@@ -151,6 +151,7 @@ shopProductsContainer.addEventListener("click", (event) => {
             const item = {
                 id: id,
                 quantity: 1,
+                name: cartProduct.name,
                 src: cartProduct.src,
                 unitPrice: cartProduct.price,
                 total: cartProduct.price
@@ -163,3 +164,5 @@ shopProductsContainer.addEventListener("click", (event) => {
         getCartCount();
     }
 });
+
+
