@@ -784,6 +784,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 10px;
 
 }
 
@@ -820,5 +821,22 @@ footer {
     width: 1250px;
     display: flex;
     justify-content: end;
-    border: 1px solid red;
+}
+
+.cart-checkout-checked-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-checkout-checked-container button {
+    padding: 10px 5px;
+    border: none;
+    background-color: var(--btn-bgc);
+    cursor: pointer;
+    color: white;
+
+}
+
+.cart-checkout-checked-container p {
+    font-size: 25px;
 }
