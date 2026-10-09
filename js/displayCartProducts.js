@@ -4,7 +4,10 @@ import {showCart , showCartCount} from './productsCart.js';
 let cartProductContainer = document.querySelector(".cart-product-container");
 let totalSpan = document.querySelector(".cart-total-items-span");
 let totalLength = document.querySelector(".cart-checkout-length");
+let checkoutBtn = document.querySelector(".checkout-btn");
 let count = document.querySelector(".cart-count");
+let selectedProductCount;
+
 let cart = showCart();
 
 if(!cart) {
@@ -53,7 +56,7 @@ function updateSelectedTotal() {
     let total = 0;
 
     totalLength.textContent = checkboxes.length;
-
+    selectedProductCount = checkboxes.length;
     checkboxes.forEach((checkbox) => {
         const id = Number(checkbox.dataset.id);
 
@@ -65,6 +68,7 @@ function updateSelectedTotal() {
     });
 
     totalSpan.textContent = `${total}`;
+    console.log(selectedProductCount);
 }
 
 cartProductContainer.addEventListener("change", (event) => {
@@ -90,5 +94,32 @@ cartProductContainer.addEventListener("click", (e) => {
         }
     }
 });
+
+function proceedtoCheckout() {
+    const checkboxes = document.querySelectorAll(
+        ".cart-product-checkbox:checked"
+    );
+
+    let selectedProducts = [];
+
+    checkboxes.forEach((checkbox) => {
+        const id = Number(checkbox.dataset.id);
+        let product = cart.find((product) => product.id === id);
+        selectedProducts.push(product);
+    });
+
+    localStorage.setItem("checkoutProducts", JSON.stringify(selectedProducts));
+}
+
+checkoutBtn.addEventListener("click", (e) => {
+    if(!selectedProductCount) {
+        alert("No products selected");
+        e.preventDefault();
+        return;
+    }
+
+    proceedtoCheckout();
+
+})
 
 toggleShowProduct();
