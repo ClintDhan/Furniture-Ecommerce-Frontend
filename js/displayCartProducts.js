@@ -25,7 +25,7 @@ else {
                 <p class="cart-product-total">₱${total}</p>
                 <button class="cart-product-delete">DELETE</button>
             </div>
-        </div>
+        </div> 
         `
     }).join("")
 }
@@ -44,7 +44,7 @@ cartProductContainer.addEventListener("change", (event) => {
         checkedBoxes.forEach(checkbox => {
             const id = Number(checkbox.dataset.id);
             const product = cart.find(product => product.id === id);
-
+            
             total += product.total;
         });
 
