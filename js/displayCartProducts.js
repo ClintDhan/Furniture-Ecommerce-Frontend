@@ -1,13 +1,14 @@
-import {showCart} from './productsCart.js';
+import {showCart , showCartCount} from './productsCart.js';
 
 
 let cartProductContainer = document.querySelector(".cart-product-container");
 let totalSpan = document.querySelector(".cart-total-items-span");
 let totalLength = document.querySelector(".cart-checkout-length");
+let count = document.querySelector(".cart-count");
 let cart = showCart();
 
 if(!cart) {
-    cartProductContainer.innerHTML = `<h1>No products added</h1>`;
+    toggleShowProduct();
 }
 else {
     displayCartProducts();
@@ -35,12 +36,23 @@ function displayCartProducts() {
     }).join("")
 }
 
+function toggleShowProduct() {
+    if(!showCartCount()) {
+        cartProductContainer.innerHTML = `<h1>No products added</h1>`;
+    }
+    else {
+        displayCartProducts();
+    }
+}
+
 function updateSelectedTotal() {
     const checkboxes = document.querySelectorAll(
         ".cart-product-checkbox:checked"
     );
 
     let total = 0;
+
+    totalLength.textContent = checkboxes.length;
 
     checkboxes.forEach((checkbox) => {
         const id = Number(checkbox.dataset.id);
@@ -52,7 +64,7 @@ function updateSelectedTotal() {
         }
     });
 
-    totalSpan.textContent = `₱${total}`;
+    totalSpan.textContent = `${total}`;
 }
 
 cartProductContainer.addEventListener("change", (event) => {
@@ -71,9 +83,12 @@ cartProductContainer.addEventListener("click", (e) => {
             cart = cart.filter((product) => product.id !== id);
             
             localStorage.setItem("cart", JSON.stringify(cart));
-            displayCartProducts();
+            toggleShowProduct();
             updateSelectedTotal();
+            count.textContent = showCartCount();
 
         }
     }
 });
+
+toggleShowProduct();
