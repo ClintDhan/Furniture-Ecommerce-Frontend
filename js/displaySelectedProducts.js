@@ -16,8 +16,8 @@ let placeOrderBtn = document.querySelector(".place-order-btn");
 let cart = showCart();
 
 
-let merchSubtotalValue = selectedProducts.reduce((total , {unitPrice}) => {
-    return total + unitPrice;
+let merchSubtotalValue = selectedProducts.reduce((total , {unitPrice , quantity}) => {
+    return total + (unitPrice * quantity);
 }, 0);
 
 let shipmentValue = merchSubtotalValue * 0.03;

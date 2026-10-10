@@ -1,6 +1,7 @@
 import { productsList } from "./products.js";
-import { showCart } from './productsCart.js';
+import { showCart} from './productsCart.js';
 import { getCartCount} from './cartCount.js';
+import { showProducts } from "./viewCart.js";
 
 let startIndex = 0;
 let initialIndex = 10;
@@ -162,6 +163,7 @@ shopProductsContainer.addEventListener("click", (event) => {
 
         localStorage.setItem("cart", JSON.stringify(cart));
         getCartCount();
+        showProducts();
     }
 });
 

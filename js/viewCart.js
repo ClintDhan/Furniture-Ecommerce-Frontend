@@ -14,7 +14,8 @@ cartBtn.addEventListener("click", () => {
     showProducts();
 });
 
-function showProducts() {
+export function showProducts() {
+    cartProducts = showCart();
     let cartCount = showCartCount();
     if(cartCount === 0) {
         return viewCartContainer.innerHTML = `
