@@ -68,16 +68,8 @@
             </div>
         </div>
 
-        <div class="checkout-products-info">
-            <div>
-                <img src="" alt="">
-                <p></p>
-            </div>
-
-            <p class="checkout-products-price"></p>
-            <p class="checkout-products-quantity"></p>
-            <p class="checkout-products-subtotal"></p>
-        </div>
+        <div class="checkout-products-info-container"></div>
+        
     </div>
 
     <div class="payment-method-container">
@@ -86,7 +78,7 @@
             <p class="cod">Cash on Delivery</p>
         </div>
         <div class="payment-info-container">
-            <div>
+            <div class="payment-info-adjust">
                 <div class="payment-info-flx">
                     <p>Merchandise Subtotal</p>
                     <p class="merch-subtotal"></p>
@@ -95,14 +87,14 @@
                     <p>Shipping Subtotal</p>
                     <p class="ship-subtotal"></p>
                 </div>
-                <div class="payment-info-flx">
-                    <p>Total Payment</p>
+                <div class="payment-info-flx total-margin">
+                    <h3>Total Payment</h3>
                     <p class="total-payment"></p>
                 </div>
             </div>
         </div>
         <div class="place-order-container">
-            <button>PLACE ORDER</button>
+            <button class="place-order-btn">PLACE ORDER</button>
         </div>
     </div>
 
@@ -122,5 +114,6 @@
 <script type="module" src="js/app.js"></script>
 <script type="module" src="js/cartCount.js"></script>
 <script type="module" src="js/viewCart.js"></script>
+<script type="module" src="js/displaySelectedProducts.js"></script>
 </body>
 </html>
