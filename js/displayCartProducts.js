@@ -17,6 +17,7 @@ else {
     displayCartProducts();
 }
 
+totalLength.textContent = 0;
 
 function displayCartProducts() {
     cartProductContainer.innerHTML = cart.map(({id, quantity, name, src, unitPrice, total}) => {
@@ -29,10 +30,18 @@ function displayCartProducts() {
             </div>
 
             <div class="cart-product-info-right">
-                <p class="cart-product-price">₱${unitPrice}</p>
-                <p class="cart-product-quantity">${quantity}</p>
-                <p class="cart-product-total">₱${total}</p>
-                <button class="cart-product-delete">DELETE</button>
+                <div class="cart-header-flx-container">
+                    <p class="cart-product-price">₱${unitPrice}</p>
+                </div>
+                <div class="cart-header-flx-container">
+                    <p class="cart-product-quantity">${quantity}</p>
+                </div>
+                <div class="cart-header-flx-container">
+                    <p class="cart-product-total">₱${total}</p>
+                </div>
+                <div class="cart-header-flx-container">
+                    <button class="cart-product-delete">DELETE</button>
+                </div>
             </div>
         </div> 
         `

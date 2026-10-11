@@ -147,6 +147,7 @@ shopProductsContainer.addEventListener("click", (event) => {
             existingItem.total = existingItem.quantity * existingItem.unitPrice;
         }
         else {
+            
             const cartProduct = products.find(product => product.id === id);
 
             const item = {
