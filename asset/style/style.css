@@ -616,16 +616,19 @@ footer {
 
 /* contact */
 
-.bi-exclamation {
+.bi-exclamation , .visit {
     color: var(--exclamation-color);
+    font-weight: var(--text-bold);
 }
 
-.bi-telephone-fill {
+.bi-telephone-fill , .call {
     color: var(--telephone-color);
+    font-weight: var(--text-bold);
 }
 
-.bi-envelope-check {
+.bi-envelope-check , .email {
     color: var(--email-color);
+    font-weight: var(--text-bold);
 }
 
 .contact-form-flx {
@@ -1421,3 +1424,66 @@ footer {
         height: 250px;
     }
 }
+
+
+/* contact section */
+
+@media (max-width: 1257px) {
+
+    .contact-information-container {
+        width: 98%;
+    }
+}
+
+@media (max-width: 885px) {
+
+    .contact-information-container {
+        position: relative;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .contact-information-card {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: var(--txt-color);
+    }
+
+}
+
+@media (max-width: 647px) {
+    .contact-form-title {
+        font-size: var(--tablet-title-font-size);
+    }
+
+    .contact-form-flx  {
+        width: 100%;
+    }
+    .form-container {
+        width: 98%;
+    }
+
+    .input-container input {
+        height: 30px;
+    }
+
+    .contact-form-btn {
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 410px) {
+    .contact-information-card {
+        width: 98%;
+    }
+}
+
+
+
