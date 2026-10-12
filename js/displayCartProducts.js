@@ -6,6 +6,7 @@ let totalSpan = document.querySelector(".cart-total-items-span");
 let totalLength = document.querySelector(".cart-checkout-length");
 let checkoutBtn = document.querySelector(".checkout-btn");
 let count = document.querySelector(".cart-count");
+let mobileCount = document.querySelector(".mobile-cart-count");
 let selectedProductCount;
 
 let cart = showCart();
@@ -99,6 +100,7 @@ cartProductContainer.addEventListener("click", (e) => {
             toggleShowProduct();
             updateSelectedTotal();
             count.textContent = showCartCount();
+            mobileCount.textContent = showCartCount();
 
         }
     }
