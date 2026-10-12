@@ -49,9 +49,9 @@ checkOutProductsContainer.innerHTML = selectedProducts.map(({id, name, quantity,
 }).join("");
 
 
-merchSubtotal.textContent = `₱${merchSubtotalValue}`;
-shipSubtotal.textContent = `₱${shipmentValue}`;
-totalPayment.textContent = `₱${merchSubtotalValue + shipmentValue}`;
+merchSubtotal.textContent = `₱${merchSubtotalValue.toLocaleString()}`;
+shipSubtotal.textContent = `₱${shipmentValue.toLocaleString()}`;
+totalPayment.textContent = `₱${(merchSubtotalValue + shipmentValue).toLocaleString()}`;
 
 placeOrderBtn.addEventListener("click", () => {
     if(confirm(`Continue to place order(s)?`)) {

@@ -76,7 +76,7 @@ function updateSelectedTotal() {
         }
     });
 
-    totalSpan.textContent = `${total}`;
+    totalSpan.textContent = `${total.toLocaleString()}`;
     console.log(selectedProductCount);
 }
 
