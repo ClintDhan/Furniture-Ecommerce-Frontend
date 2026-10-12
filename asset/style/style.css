@@ -435,6 +435,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .about-hero-section-container {
@@ -514,6 +515,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding-top: 30px;
+    width: 100%;
 }
 
 .about-values-container {
@@ -544,6 +546,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .values-1 {
@@ -1353,5 +1356,68 @@ footer {
 
     .shop-products-container {
         gap: 20px;
+    }
+}
+
+/* about page */
+@media (max-width: 1257px) {
+    .about-hero-section-container , .about-our-story-section , .values-grid ,.about-values-container{
+        width: 98%;
+    }
+    
+}
+
+
+@media (max-width: 921px) {
+
+    .about-hero-section-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-hero-left {
+        text-align: center;
+    }
+    
+    .about-our-story-section {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 760px) {
+    .closing-cta-section {
+        text-align: center;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 270px 270px 270px 270px;
+    }
+
+    .about-our-story-section-container img {
+        width: 100%;
+    }
+    .about-hero-left {
+        width: 98%;
+    }
+
+    .about-hero-left-title , .our-story , .our-values , .closing-title{
+        font-size: var(--tablet-title-font-size);
+    }
+
+    .our-story-title {
+        font-size: var(--tablet-sub-font-size);
+    }
+
+    .our-story-sub {
+        margin: 10px 0;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .about-hero-section-container img {
+        width: 100%;
+        height: 250px;
     }
 }
