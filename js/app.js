@@ -1,6 +1,7 @@
 let modal = document.querySelector(".modal-container");
 let burger = document.querySelector(".menu");
 let exitBtn = document.querySelector(".modal-exit");
+let cartMobile = document.querySelector(".mobile-cart-count-container")
 
 
 burger.addEventListener("click", () => {

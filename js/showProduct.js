@@ -12,6 +12,9 @@ let products = productsList();
 let filteredProducts = products;
 let initialProducts = filteredProducts.slice(startIndex, initialIndex);
 let loadMoreBtn = document.querySelector(".load-more-btn");
+let toast = document.querySelector(".toast-notification");
+let toastExit = document.querySelector(".toast-exit-btn");
+let toastTimeout;
 
 const categoryRadios = document.querySelectorAll('input[name="category"]');
 
@@ -24,7 +27,7 @@ shopProductsContainer.innerHTML += initialProducts.map(({id , name, src, price})
         <div class="shop-card-flx">
             <div>
                 <p class="shop-product-title">${name}</p>
-                <p class="shop-product-price">₱${price}</p>
+                <p class="shop-product-price">₱${price.toLocaleString()}</p>
             </div>
 
             <div class="product-add-cart-container">
@@ -72,7 +75,7 @@ categoryRadios.forEach(radio => {
                 <div class="shop-card-flx">
                     <div>
                         <p class="shop-product-title">${name}</p>
-                        <p class="shop-product-price">₱${price}</p>
+                        <p class="shop-product-price">₱${price.toLocaleString()}</p>
                     </div>
 
                     <div class="product-add-cart-container">
@@ -105,7 +108,7 @@ loadMoreBtn.addEventListener("click", () => {
         <div class="shop-card-flx">
             <div>
                 <p class="shop-product-title">${name}</p>
-                <p class="shop-product-price">₱${price}</p>
+                <p class="shop-product-price">₱${price.toLocaleString()}</p>
             </div>
 
             <div class="product-add-cart-container">
@@ -162,10 +165,29 @@ shopProductsContainer.addEventListener("click", (event) => {
 
         }
 
+        showAddedToCartToast();
         localStorage.setItem("cart", JSON.stringify(cart));
         getCartCount();
         showProducts();
     }
 });
+
+
+toastExit.addEventListener("click", exitToast);
+
+function showAddedToCartToast() {
+    toast.classList.add("show-toast");
+
+    clearTimeout(toastTimeout);
+
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove("show-toast");
+    }, 3000);
+}
+
+function exitToast() {
+    toast.classList.remove("show-toast");
+    clearTimeout(toastTimeout);
+}
 
 
