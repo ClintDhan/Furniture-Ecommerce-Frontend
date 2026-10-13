@@ -14,7 +14,15 @@ let initialProducts = filteredProducts.slice(startIndex, initialIndex);
 let loadMoreBtn = document.querySelector(".load-more-btn");
 let toast = document.querySelector(".toast-notification");
 let toastExit = document.querySelector(".toast-exit-btn");
+let cartModalContainer = document.querySelector(".cart-modal-container");
+let cartModalContainerInfo = document.querySelector(".cart-product-modal-info");
+let cancelBtn = document.querySelector(".cart-modal-cancel-btn");
+let addBtn = document.querySelector(".cart-modal-add-btn");
 let toastTimeout;
+let id;
+let numberInput = 1;
+
+
 
 const categoryRadios = document.querySelectorAll('input[name="category"]');
 
@@ -137,40 +145,112 @@ function checkLastProduct() {
 
 shopProductsContainer.addEventListener("click", (event) => {
     if (event.target.closest(".product-add-cart-container")) {
+        numberInput = 1;
         const button = event.target.closest(".product-add-cart-container");
 
+
         const productCard = button.parentElement.parentElement;
-        const id = Number(productCard.id.slice(11));
+        id = Number(productCard.id.slice(11));
         
         
-        const existingItem = cart.find(item => item.id === id);
+       
+        const cartProduct = products.find(product => product.id === id);
 
-        if (existingItem) {
-            existingItem.quantity++;
-            existingItem.total = existingItem.quantity * existingItem.unitPrice;
-        }
-        else {
+        // if (existingItem) {
+        //     existingItem.quantity++;
+        //     existingItem.total = existingItem.quantity * existingItem.unitPrice;
+        // }
+        // else {
             
-            const cartProduct = products.find(product => product.id === id);
+        //     const cartProduct = products.find(product => product.id === id);
 
-            const item = {
-                id: id,
-                quantity: 1,
-                name: cartProduct.name,
-                src: cartProduct.src,
-                unitPrice: cartProduct.price,
-                total: cartProduct.price
+        //     const item = {
+        //         id: id,
+        //         quantity: 1,
+        //         name: cartProduct.name,
+        //         src: cartProduct.src,
+        //         unitPrice: cartProduct.price,
+        //         total: cartProduct.price
+        //     }
+        //     cart.push(item);
+
+        // }
+
+
+        cartModalContainer.classList.toggle("show-add-to-cart-modal");
+        cartModalContainerInfo.innerHTML = `<div class="cart-product-modal-info-flx">
+                    <img class="cart-product-modal-info-flx-img" src="${cartProduct.src}" alt="${cartProduct.src}">
+
+                    <div>
+                        <p class="cart-product-modal-name">${cartProduct.name}</p> <br>
+                        <p class="cart-product-modal-price">₱<span>${cartProduct.price.toLocaleString()}</span></p>
+                    </div>
+                </div>
+
+                <div class="cart-modal-input-container">
+                    <div class="cart-modal-minus"><i class="bi bi-dash"></i></div>
+                    <div class="cart-modal-input">1</div>
+                    <div class="cart-modal-plus"><i class="bi bi-plus"></i></div>
+                </div>`
+        ;
+
+        let cartMinus = document.querySelector(".cart-modal-minus");
+        let cartPlus = document.querySelector(".cart-modal-plus");
+        let cartModalInput = document.querySelector(".cart-modal-input");
+        numberInput = Number(cartModalInput.textContent);
+
+        cartModalInput.textContent = numberInput;
+
+
+        cartMinus.addEventListener("click", () => {
+            if (numberInput > 1) {
+                numberInput--;
+                cartModalInput.textContent = numberInput;
             }
-            cart.push(item);
+        });
+        cartPlus.addEventListener("click", () => {
+            numberInput++;
+            cartModalInput.textContent = numberInput;
+        });
+    }
+});
 
+cancelBtn.addEventListener("click", () => {
+    cartModalContainer.classList.toggle("show-add-to-cart-modal");
+});
+
+addBtn.addEventListener("click", () => {
+    const existingItem = cart.find(item => item.id === id);
+    
+    if (existingItem) {
+        existingItem.quantity += numberInput;
+        existingItem.total = existingItem.quantity * existingItem.unitPrice;
+    }
+    else {
+        
+        const cartSpecificProduct = products.find(product => product.id === id);
+
+        const item = {
+            id: id,
+            quantity: numberInput,
+            name: cartSpecificProduct.name,
+            src: cartSpecificProduct.src,
+            unitPrice: cartSpecificProduct.price,
+            total: numberInput * cartSpecificProduct.price
         }
+        cart.push(item);
+
+    }
 
         showAddedToCartToast();
         localStorage.setItem("cart", JSON.stringify(cart));
         getCartCount();
         showProducts();
-    }
+        cartModalContainer.classList.toggle("show-add-to-cart-modal");
 });
+
+
+
 
 
 toastExit.addEventListener("click", exitToast);
