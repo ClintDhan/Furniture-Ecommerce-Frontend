@@ -8,16 +8,18 @@
 
 
 :root {
-    
+    --hero-sub-color: #3d5dfc;
     --main-bgc: #FAF9F6
     --header-nav-size: 16px;
-    --span-color: #0258D4;
+    --span-color: #0a4394;
 
 
     --title-size: 56px;
     --text-color: #141A3D;
     --btn-bgc: #002458;
     --main-bgc: #FAF9F6;
+
+    --bg-linear-btn-bgc: linear-gradient(135deg, #002458 0%, #2563EB 100%);
 
     --text-light: 300;
     --text-bold: 700;
@@ -118,7 +120,7 @@ nav {
     background: rgba(255, 255, 255, 0.07);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.47);
     padding: 30px;
 }
@@ -133,6 +135,7 @@ nav {
     font-size: 18px;
     font-weight: 300;
     color: #141A3D;
+    margin-bottom: 20px;
 }
 
 .hero-span {
@@ -168,13 +171,14 @@ nav {
 }
 
 .hero-cta-btn {
-    background-color: var(--btn-bgc);
+    background: var(--bg-linear-btn-bgc);
     color: var(--txt-color);
     padding: 17px;
-    border: 1px solid #B2B2B2;
+    border: 1px solid var(--btn-bgc);
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 }
 
 
@@ -251,15 +255,16 @@ nav {
     font-size: 16px;
     font-weight: var(--text-bold);
     color: var(--txt-color);
-    border: 1px solid #C3BFBF;
-    background-color: var(--btn-bgc);
+    border: 1px solid var(--btn-bgc);
+    background: var(--bg-linear-btn-bgc);
     padding: 10px 40px;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 }
 
 .latest-card-flex > div img {
     width: 409px;
-    height: 407px;
+    height: 350px;
 }
 
 
@@ -546,7 +551,7 @@ footer {
 }
 
 .cart-modal-add-btn {
-    background-color: var(--btn-bgc);
+    background: var(--bg-linear-btn-bgc);
     color: white;
 }
 
@@ -572,13 +577,15 @@ footer {
 
 .load-more-btn {
     width: 290px;
-    background-color: #002458;
+    background: var(--bg-linear-btn-bgc);
     border: none;
     color: var(--txt-color);
     font-weight: var(--text-bold);
     font-size: 15px;
     height: 45px;
     cursor: pointer;
+    border: 1px solid var(--btn-bgc);
+    transition: all 0.4s ease-in-out;
 }
 
 /* about section */
@@ -755,7 +762,7 @@ footer {
 
 .closing-cta-btn {
     border: 1px solid #B2B2B2;
-    background-color: #002458;
+    background: var(--bg-linear-btn-bgc);
     color: #D7D7D7;
     text-transform: uppercase;
     margin-top: 10px;
@@ -840,12 +847,13 @@ footer {
 .contact-form-btn {
     width: 100%;
     height: 70px;
-    background-color: var(--btn-bgc);
-    border: 1px solid #B9B9B9;
+    background: var(--bg-linear-btn-bgc);
+    border: 1px solid var(--btn-bgc);
     color: var(--txt-color);
     font-size: 25px;
     font-weight: var(--text-bold);
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
 }
 
 .contact-information-section {
@@ -950,7 +958,7 @@ footer {
 
 .view-cart-see-all {
     width: 100%;
-    background-color: var(--btn-bgc);
+    background: var(--bg-linear-btn-bgc);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -958,6 +966,7 @@ footer {
     cursor: pointer;
     color: var(--txt-color);
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 }
 
 .view-cart-card-price {
@@ -1063,13 +1072,14 @@ footer {
     max-width: 150px;
     height: 40px;
     border: none;
-    background-color: var(--btn-bgc);
+    background: var(--bg-linear-btn-bgc);
     cursor: pointer;
     color: var(--txt-color);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 
 }
 
@@ -1181,7 +1191,7 @@ footer {
 .place-order-container button {
     height: 57px;
     width: 219px;
-    background-color: var(--btn-bgc);
+    background: var(--bg-linear-btn-bgc);
     color: var(--txt-color);
     cursor: pointer;
     border: none;
@@ -1336,6 +1346,10 @@ footer {
     align-items: center;
     font-size: 30px;
 
+}
+
+.hero-cta-btn:hover , .view-cart-see-all:hover, .cart-checkout-checked-container a:hover , .see-all:hover ,.load-more-btn:hover ,.contact-form-btn:hover{
+    background: #020238;
 }
 
 /* responsive setion */
