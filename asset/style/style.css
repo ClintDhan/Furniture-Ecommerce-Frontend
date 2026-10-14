@@ -270,10 +270,11 @@ nav {
     text-align: center;
 }
 .slider-container {
-    margin-top: 20px;
+     margin-top: 20px;
     width: 1250px;
-     overflow: hidden;
-     height: 30vh;
+    max-width: 98%;
+    overflow: hidden;
+    height: 30vh;
 }
 
 .slider {
@@ -292,7 +293,7 @@ nav {
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 5px));
     }
 }
 
@@ -789,6 +790,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .contact-form-title {
@@ -800,6 +802,10 @@ footer {
 
 .contact-form-container {
     width: 627px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form-container {
@@ -923,6 +929,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    gap: 10px;
 }
 
 .view-cart-card-flx {
@@ -1376,6 +1383,12 @@ footer {
 
 @media (max-width: 930px) {
 
+    .slider > img {
+        width:  120px;
+        height: 120px;
+    } 
+
+
     .latest-products-section {
         margin: 50px 0;
     }
@@ -1398,6 +1411,10 @@ footer {
     .latest-card-price {
         font-size: 22px;
     }
+
+    .popular-products-card img {
+        height: 350px;
+    }
 }
 
 @media (max-width: 705px) {
@@ -1406,11 +1423,15 @@ footer {
         min-height: 200px;
     }
 
+    .popular-products-section-flex {
+        width: 98%;
+    }
     .hero-sub {
         margin-bottom: 20px;
     }
     .popular-products-section-flex {
         flex-direction: column;
+        gap: 20px;
     }
 
     .card-to-reverse {
@@ -1446,8 +1467,17 @@ footer {
     }
 
     .slider {
-    animation: slide 8s linear infinite reverse;
+    animation: slide 15s linear infinite reverse;
     }
+
+    .popular-products-card-title , .latest-card-title{
+        font-size: 25px;
+    }
+
+    .popular-products-card-sub , .latest-card-price {
+        font-size: 20px;
+    }
+
 }
 
 @media (max-width: 705px) {
@@ -1458,6 +1488,7 @@ footer {
 
     .latest-card-flex {
         margin-top: 20px;
+        gap: 20px;
     }
 }
 
@@ -1471,6 +1502,16 @@ footer {
     footer {
         height: 90px;
     }
+
+    .latest-card-flex > div img {
+        height: 300px;
+    }
+
+    .slider {
+    animation: slide 20s linear infinite reverse;
+    }
+
+
 }
 
 
@@ -1494,6 +1535,15 @@ footer {
     }
 }
 
+@media (max-width: 1165px) {
+    .shop-products-card {
+        width: 32.42%;
+    }
+
+    .shop-products-center {
+        margin-top: 10px;
+    }
+}
 @media (max-width: 1000px) {
     .shop-products-card {
         width: 49.42%;
@@ -1510,9 +1560,17 @@ footer {
     }
 }
 
-@media (max-width: 727px) {
+@media (max-width: 731px) {
+
+    .shop-card-flx {
+        height: 100px;
+    }
     .shop-products-card {
-        width:98%;
+        width:48%;
+    }
+
+    .shop-products-img {
+        height: 200px;
     }
 
     .shop-product-title {
@@ -1528,6 +1586,33 @@ footer {
     }
 }
 
+@media (max-width: 509px) {
+
+    .shop-products-card {
+        width:47.5%;
+    }
+
+    .shop-product-title {
+        font-size: 15px;
+    }
+
+    .shop-product-price {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 415px) {
+
+    .shop-products-card {
+        width:46%;
+    }
+
+    .shop-products-img {
+        height: 150px;
+    }
+
+}
 /* about page */
 @media (max-width: 1257px) {
     .about-hero-section-container , .about-our-story-section , .values-grid ,.about-values-container{
@@ -1646,6 +1731,14 @@ footer {
 }
 
 @media (max-width: 410px) {
+    .contact-form-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .input-container label {
+        font-size: 18px;
+    }
     .contact-information-card {
         width: 98%;
     }
