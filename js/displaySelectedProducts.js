@@ -33,7 +33,7 @@ checkOutProductsContainer.innerHTML = selectedProducts.map(({id, name, quantity,
             
             <div class="checkout-products-price-flx">
                 <div class="checkout-products-header-p-container">
-                    <p class="checkout-products-price">₱${unitPrice}</p>
+                    <p class="checkout-products-price">₱${unitPrice.toLocaleString()}</p>
                 </div>
 
                 <div class="checkout-products-header-p-container">
@@ -41,7 +41,7 @@ checkOutProductsContainer.innerHTML = selectedProducts.map(({id, name, quantity,
                 </div>
 
                 <div class="checkout-products-header-p-container">
-                    <p class="checkout-products-subtotal subtotal">₱${quantity * unitPrice}</p>
+                    <p class="checkout-products-subtotal subtotal">₱${(quantity * unitPrice).toLocaleString()}</p>
                 </div>
             </div>
         </div>

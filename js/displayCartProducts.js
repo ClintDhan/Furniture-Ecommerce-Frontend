@@ -32,13 +32,13 @@ function displayCartProducts() {
 
             <div class="cart-product-info-right">
                 <div class="cart-header-flx-container">
-                    <p class="cart-product-price">₱${unitPrice}</p>
+                    <p class="cart-product-price">₱${unitPrice.toLocaleString()}</p>
                 </div>
                 <div class="cart-header-flx-container">
                     <p class="cart-product-quantity">${quantity}</p>
                 </div>
                 <div class="cart-header-flx-container">
-                    <p class="cart-product-total">₱${total}</p>
+                    <p class="cart-product-total">₱${total.toLocaleString()}</p>
                 </div>
                 <div class="cart-header-flx-container">
                     <button class="cart-product-delete">DELETE</button>

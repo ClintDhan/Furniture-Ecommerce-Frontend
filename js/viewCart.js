@@ -36,7 +36,7 @@ export function showProducts() {
                         <h3 class="view-cart-card-name">${name}</h3>
                     </div>
 
-                    <p class="view-cart-card-price">₱${unitPrice}</p>
+                    <p class="view-cart-card-price">₱${unitPrice.toLocaleString()}</p>
                 </div>            
             `
            }).join("")
@@ -50,7 +50,7 @@ export function showProducts() {
                         <h3 class="view-cart-card-name">${name}</h3>
                     </div>
 
-                    <p class="view-cart-card-price">₱${unitPrice}</p>
+                    <p class="view-cart-card-price">₱${unitPrice.toLocaleString()}</p>
                 </div>            
             `
            }).join("")
