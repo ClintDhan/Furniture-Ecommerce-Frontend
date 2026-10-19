@@ -34,8 +34,11 @@ function displayCartProducts() {
                 <div class="cart-header-flx-container">
                     <p class="cart-product-price">₱${unitPrice.toLocaleString()}</p>
                 </div>
-                <div class="cart-header-flx-container">
-                    <p class="cart-product-quantity">${quantity}</p>
+                <div class="cart-header-flx-container cart-header-quantity">
+                        <div class="cart-minus"><i class="bi bi-chevron-compact-down"></i></div>
+                        <p class="cart-product-quantity">${quantity}</p>
+                        <div class="cart-plus"><i class="bi bi-chevron-compact-up"></i></div>
+                    
                 </div>
                 <div class="cart-header-flx-container">
                     <p class="cart-product-total">₱${total.toLocaleString()}</p>
@@ -131,6 +134,56 @@ checkoutBtn.addEventListener("click", (e) => {
 
     proceedtoCheckout();
 
-})
+});
+
+
+
+cartProductContainer.addEventListener("click", (event) => {
+
+   
+
+    const minus = event.target.closest(".cart-minus");
+    const plus = event.target.closest(".cart-plus");
+
+    if (!minus && !plus) return;
+
+    if(minus) {
+        
+        let parent = minus.parentElement.parentElement.parentElement;
+         let cartProductQuantity = parent.querySelector(".cart-product-quantity");
+        let cartProductTotal = parent.querySelector(".cart-product-total");
+        let id = Number(parent.id.slice(13));
+
+        let product = cart.find(item => item.id === id);
+
+        if(product.quantity > 1) {
+         product.quantity--;
+         product.total = product.quantity * product.unitPrice;
+        cartProductQuantity.textContent = product.quantity;
+        cartProductTotal.textContent = `₱${product.total.toLocaleString()}`;
+        }
+        
+    }
+
+    if(plus) {
+        
+        let parent = plus.parentElement.parentElement.parentElement;
+        let cartProductQuantity = parent.querySelector(".cart-product-quantity");
+        let cartProductTotal = parent.querySelector(".cart-product-total");
+        let id = Number(parent.id.slice(13));
+
+        let product = cart.find(item => item.id === id);
+         product.quantity++;
+         product.total = product.quantity * product.unitPrice;
+        cartProductQuantity.textContent = product.quantity;
+        cartProductTotal.textContent = `₱${product.total.toLocaleString()}`;
+
+    
+    }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateSelectedTotal();
+
+});
 
 toggleShowProduct();

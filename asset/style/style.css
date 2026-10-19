@@ -479,6 +479,21 @@ footer {
     z-index: 2;
 }
 
+.cart-minus , .cart-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightgray;
+}
+
+.cart-header-quantity {
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .cart-modal {
     width: 500px;
     height: auto;
@@ -773,6 +788,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.4s ease-in-out;
 }
 
 /* contact */
@@ -1348,7 +1364,7 @@ footer {
 
 }
 
-.hero-cta-btn:hover , .view-cart-see-all:hover, .cart-checkout-checked-container a:hover , .see-all:hover ,.load-more-btn:hover ,.contact-form-btn:hover{
+.hero-cta-btn:hover , .closing-cta-btn:hover , .view-cart-see-all:hover, .cart-checkout-checked-container a:hover , .see-all:hover ,.load-more-btn:hover ,.contact-form-btn:hover{
     background: #020238;
 }
 
