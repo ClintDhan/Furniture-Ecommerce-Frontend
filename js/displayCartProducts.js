@@ -1,4 +1,6 @@
 import {showCart , showCartCount} from './productsCart.js';
+import { getCartCount } from './cartCount.js';
+
 
 
 let cartProductContainer = document.querySelector(".cart-product-container");
@@ -161,6 +163,7 @@ cartProductContainer.addEventListener("click", (event) => {
          product.total = product.quantity * product.unitPrice;
         cartProductQuantity.textContent = product.quantity;
         cartProductTotal.textContent = `₱${product.total.toLocaleString()}`;
+
         }
         
     }
@@ -180,10 +183,12 @@ cartProductContainer.addEventListener("click", (event) => {
 
     
     }
-
+        
         localStorage.setItem("cart", JSON.stringify(cart));
+        getCartCount();
         updateSelectedTotal();
 
 });
 
+getCartCount();
 toggleShowProduct();
